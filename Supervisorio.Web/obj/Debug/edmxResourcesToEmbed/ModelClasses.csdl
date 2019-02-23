@@ -1,0 +1,454 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UsinaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="UsinaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CICLOUSINA" EntityType="UsinaModel.CICLOUSINA" />
+    <EntitySet Name="DESTINO" EntityType="UsinaModel.DESTINO" />
+    <EntitySet Name="ENTRADA" EntityType="UsinaModel.ENTRADA" />
+    <EntitySet Name="ESTOQUE" EntityType="UsinaModel.ESTOQUE" />
+    <EntitySet Name="FROTA" EntityType="UsinaModel.FROTA" />
+    <EntitySet Name="FUNCAO" EntityType="UsinaModel.FUNCAO" />
+    <EntitySet Name="INSUMO" EntityType="UsinaModel.INSUMO" />
+    <EntitySet Name="PESAGEM" EntityType="UsinaModel.PESAGEM" />
+    <EntitySet Name="RECEITA" EntityType="UsinaModel.RECEITA" />
+    <EntitySet Name="SILO" EntityType="UsinaModel.SILO" />
+    <EntitySet Name="TIPOCICLO" EntityType="UsinaModel.TIPOCICLO" />
+    <EntitySet Name="TIPOINSUMO" EntityType="UsinaModel.TIPOINSUMO" />
+    <EntitySet Name="TURNO" EntityType="UsinaModel.TURNO" />
+    <EntitySet Name="USUARIO" EntityType="UsinaModel.USUARIO" />
+    <AssociationSet Name="FK_CicloUsina_Receita1" Association="UsinaModel.FK_CicloUsina_Receita1">
+      <End Role="RECEITA" EntitySet="RECEITA" />
+      <End Role="CICLOUSINA" EntitySet="CICLOUSINA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CicloUsina_TIPOCICLO" Association="UsinaModel.FK_CicloUsina_TIPOCICLO">
+      <End Role="TIPOCICLO" EntitySet="TIPOCICLO" />
+      <End Role="CICLOUSINA" EntitySet="CICLOUSINA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CicloUsina_TURNO" Association="UsinaModel.FK_CicloUsina_TURNO">
+      <End Role="TURNO" EntitySet="TURNO" />
+      <End Role="CICLOUSINA" EntitySet="CICLOUSINA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CicloUsina_USUARIO" Association="UsinaModel.FK_CicloUsina_USUARIO">
+      <End Role="USUARIO" EntitySet="USUARIO" />
+      <End Role="CICLOUSINA" EntitySet="CICLOUSINA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Destino_Caminhao" Association="UsinaModel.FK_Destino_Caminhao">
+      <End Role="FROTA" EntitySet="FROTA" />
+      <End Role="DESTINO" EntitySet="DESTINO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Destino_Cliente" Association="UsinaModel.FK_Destino_Cliente">
+      <End Role="USUARIO" EntitySet="USUARIO" />
+      <End Role="DESTINO" EntitySet="DESTINO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Destino_Pesagem" Association="UsinaModel.FK_Destino_Pesagem">
+      <End Role="PESAGEM" EntitySet="PESAGEM" />
+      <End Role="DESTINO" EntitySet="DESTINO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ENTRADA_INSUMO" Association="UsinaModel.FK_ENTRADA_INSUMO">
+      <End Role="INSUMO" EntitySet="INSUMO" />
+      <End Role="ENTRADA" EntitySet="ENTRADA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ENTRADA_USUARIO" Association="UsinaModel.FK_ENTRADA_USUARIO">
+      <End Role="USUARIO" EntitySet="USUARIO" />
+      <End Role="ENTRADA" EntitySet="ENTRADA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pesagem_Caminhao" Association="UsinaModel.FK_Pesagem_Caminhao">
+      <End Role="FROTA" EntitySet="FROTA" />
+      <End Role="PESAGEM" EntitySet="PESAGEM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_INSUMO_SILO" Association="UsinaModel.FK_INSUMO_SILO">
+      <End Role="SILO" EntitySet="SILO" />
+      <End Role="INSUMO" EntitySet="INSUMO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_INSUMO_TIPOINSUMO" Association="UsinaModel.FK_INSUMO_TIPOINSUMO">
+      <End Role="TIPOINSUMO" EntitySet="TIPOINSUMO" />
+      <End Role="INSUMO" EntitySet="INSUMO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RECEITA_USUARIO" Association="UsinaModel.FK_RECEITA_USUARIO">
+      <End Role="USUARIO" EntitySet="USUARIO" />
+      <End Role="RECEITA" EntitySet="RECEITA" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="CICLOUSINA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDTipoCiclo" Type="Int32" Nullable="false" />
+    <Property Name="IDCliente" Type="Int32" Nullable="false" />
+    <Property Name="Data" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Totalizador" Type="Int32" Nullable="false" />
+    <Property Name="IDReceita" Type="Int32" Nullable="false" />
+    <Property Name="Ciclo" Type="Int32" Nullable="false" />
+    <Property Name="IDTurno" Type="Int32" Nullable="false" />
+    <Property Name="DataProducao" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="IDOperacao" Type="Int32" Nullable="false" />
+    <Property Name="IDCaminhao" Type="Int32" Nullable="false" />
+    <Property Name="Agr1Real" Type="Int32" Nullable="false" />
+    <Property Name="Agr1Prog" Type="Int32" Nullable="false" />
+    <Property Name="Agr2Real" Type="Int32" Nullable="false" />
+    <Property Name="Agr2Prog" Type="Int32" Nullable="false" />
+    <Property Name="Agr3Real" Type="Int32" Nullable="false" />
+    <Property Name="Agr3Prog" Type="Int32" Nullable="false" />
+    <Property Name="Agr4Real" Type="Int32" Nullable="false" />
+    <Property Name="Agr4Prog" Type="Int32" Nullable="false" />
+    <Property Name="Agr5Real" Type="Int32" Nullable="false" />
+    <Property Name="Agr5Prog" Type="Int32" Nullable="false" />
+    <Property Name="Agr6Real" Type="Int32" Nullable="false" />
+    <Property Name="Agr6Prog" Type="Int32" Nullable="false" />
+    <Property Name="UR1" Type="Int32" Nullable="false" />
+    <Property Name="UR2" Type="Int32" Nullable="false" />
+    <Property Name="UR3" Type="Int32" Nullable="false" />
+    <Property Name="UR4" Type="Int32" Nullable="false" />
+    <Property Name="Cim1Real" Type="Int32" Nullable="false" />
+    <Property Name="Cim1Prog" Type="Int32" Nullable="false" />
+    <Property Name="Cim2Real" Type="Int32" Nullable="false" />
+    <Property Name="Cim2Prog" Type="Int32" Nullable="false" />
+    <Property Name="Cim3Real" Type="Int32" Nullable="false" />
+    <Property Name="Cim3Prog" Type="Int32" Nullable="false" />
+    <Property Name="Cim4Real" Type="Int32" Nullable="false" />
+    <Property Name="Cim4Prog" Type="Int32" Nullable="false" />
+    <Property Name="Agua1Real" Type="Int32" Nullable="false" />
+    <Property Name="Agua1Prog" Type="Int32" Nullable="false" />
+    <Property Name="Adit1Real" Type="Int32" Nullable="false" />
+    <Property Name="Adit1Prog" Type="Int32" Nullable="false" />
+    <Property Name="Adit2Real" Type="Int32" Nullable="false" />
+    <Property Name="Adit2Prog" Type="Int32" Nullable="false" />
+    <Property Name="Adit3Real" Type="Int32" Nullable="false" />
+    <Property Name="Adit3Prog" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="RECEITA" Relationship="UsinaModel.FK_CicloUsina_Receita1" FromRole="CICLOUSINA" ToRole="RECEITA" />
+    <NavigationProperty Name="TIPOCICLO" Relationship="UsinaModel.FK_CicloUsina_TIPOCICLO" FromRole="CICLOUSINA" ToRole="TIPOCICLO" />
+    <NavigationProperty Name="TURNO" Relationship="UsinaModel.FK_CicloUsina_TURNO" FromRole="CICLOUSINA" ToRole="TURNO" />
+    <NavigationProperty Name="USUARIO" Relationship="UsinaModel.FK_CicloUsina_USUARIO" FromRole="CICLOUSINA" ToRole="USUARIO" />
+  </EntityType>
+  <EntityType Name="DESTINO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="IDCliente" Type="Int32" Nullable="false" />
+    <Property Name="IDCaminhao" Type="Int32" Nullable="false" />
+    <Property Name="IDPesagem" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="FROTA" Relationship="UsinaModel.FK_Destino_Caminhao" FromRole="DESTINO" ToRole="FROTA" />
+    <NavigationProperty Name="USUARIO" Relationship="UsinaModel.FK_Destino_Cliente" FromRole="DESTINO" ToRole="USUARIO" />
+    <NavigationProperty Name="PESAGEM" Relationship="UsinaModel.FK_Destino_Pesagem" FromRole="DESTINO" ToRole="PESAGEM" />
+  </EntityType>
+  <EntityType Name="ENTRADA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="IDfornecedor" Type="Int32" />
+    <Property Name="IDInsumo" Type="Int32" />
+    <Property Name="DataEntrada" Type="DateTime" Precision="0" />
+    <Property Name="QtdEntrada" Type="Double" />
+    <Property Name="QtdNF" Type="Double" />
+    <Property Name="NF" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="INSUMO" Relationship="UsinaModel.FK_ENTRADA_INSUMO" FromRole="ENTRADA" ToRole="INSUMO" />
+    <NavigationProperty Name="USUARIO" Relationship="UsinaModel.FK_ENTRADA_USUARIO" FromRole="ENTRADA" ToRole="USUARIO" />
+  </EntityType>
+  <EntityType Name="ESTOQUE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Agr1Est" Type="Int32" Nullable="false" />
+    <Property Name="Agr2Est" Type="Int32" Nullable="false" />
+    <Property Name="Agr3Est" Type="Int32" Nullable="false" />
+    <Property Name="Agr4Est" Type="Int32" Nullable="false" />
+    <Property Name="Agr5Est" Type="Int32" Nullable="false" />
+    <Property Name="Agr6Est" Type="Int32" Nullable="false" />
+    <Property Name="UR1Est" Type="Int32" Nullable="false" />
+    <Property Name="UR2Est" Type="Int32" Nullable="false" />
+    <Property Name="UR3Est" Type="Int32" Nullable="false" />
+    <Property Name="UR4Est" Type="Int32" Nullable="false" />
+    <Property Name="Cim1Est" Type="Int32" Nullable="false" />
+    <Property Name="Cim2Est" Type="Int32" Nullable="false" />
+    <Property Name="Cim3Est" Type="Int32" Nullable="false" />
+    <Property Name="Cim4Est" Type="Int32" Nullable="false" />
+    <Property Name="AguaEst" Type="Int32" Nullable="false" />
+    <Property Name="Adit1Est" Type="Int32" Nullable="false" />
+    <Property Name="Adit2Est" Type="Int32" Nullable="false" />
+    <Property Name="Adit3Est" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FROTA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Placa" Type="String" Nullable="false" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="Marca" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Tara" Type="Double" Nullable="false" />
+    <Property Name="PesoBruto" Type="Double" Nullable="false" />
+    <NavigationProperty Name="DESTINO" Relationship="UsinaModel.FK_Destino_Caminhao" FromRole="FROTA" ToRole="DESTINO" />
+    <NavigationProperty Name="PESAGEM" Relationship="UsinaModel.FK_Pesagem_Caminhao" FromRole="FROTA" ToRole="PESAGEM" />
+  </EntityType>
+  <EntityType Name="FUNCAO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="INSUMO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="IDTipoInsumo" Type="Int32" Nullable="false" />
+    <Property Name="QtdEstoque" Type="Double" Nullable="false" />
+    <Property Name="QtdMinima" Type="Double" Nullable="false" />
+    <Property Name="IDSilo" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ENTRADA" Relationship="UsinaModel.FK_ENTRADA_INSUMO" FromRole="INSUMO" ToRole="ENTRADA" />
+    <NavigationProperty Name="SILO" Relationship="UsinaModel.FK_INSUMO_SILO" FromRole="INSUMO" ToRole="SILO" />
+    <NavigationProperty Name="TIPOINSUMO" Relationship="UsinaModel.FK_INSUMO_TIPOINSUMO" FromRole="INSUMO" ToRole="TIPOINSUMO" />
+  </EntityType>
+  <EntityType Name="PESAGEM">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="IDCaminhao" Type="Int32" Nullable="false" />
+    <Property Name="Peso" Type="Double" Nullable="false" />
+    <NavigationProperty Name="DESTINO" Relationship="UsinaModel.FK_Destino_Pesagem" FromRole="PESAGEM" ToRole="DESTINO" />
+    <NavigationProperty Name="FROTA" Relationship="UsinaModel.FK_Pesagem_Caminhao" FromRole="PESAGEM" ToRole="FROTA" />
+  </EntityType>
+  <EntityType Name="RECEITA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="IDCliente" Type="Int32" Nullable="false" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="14" FixedLength="true" Unicode="true" />
+    <Property Name="IDOperacao" Type="Int32" Nullable="false" />
+    <Property Name="Agr1Prog" Type="Int32" Nullable="false" />
+    <Property Name="Agr2Prog" Type="Int32" Nullable="false" />
+    <Property Name="Agr3Prog" Type="Int32" Nullable="false" />
+    <Property Name="Agr4Prog" Type="Int32" Nullable="false" />
+    <Property Name="Agr5Prog" Type="Int32" Nullable="false" />
+    <Property Name="Agr6Prog" Type="Int32" Nullable="false" />
+    <Property Name="Cim1Prog" Type="Int32" Nullable="false" />
+    <Property Name="Cim2Prog" Type="Int32" Nullable="false" />
+    <Property Name="Cim3Prog" Type="Int32" Nullable="false" />
+    <Property Name="Agua1Prog" Type="Int32" Nullable="false" />
+    <Property Name="Adit1Prog" Type="Int32" Nullable="false" />
+    <Property Name="Adit2Prog" Type="Int32" Nullable="false" />
+    <Property Name="Adit3Prog" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CICLOUSINA" Relationship="UsinaModel.FK_CicloUsina_Receita1" FromRole="RECEITA" ToRole="CICLOUSINA" />
+    <NavigationProperty Name="USUARIO" Relationship="UsinaModel.FK_RECEITA_USUARIO" FromRole="RECEITA" ToRole="USUARIO" />
+  </EntityType>
+  <EntityType Name="SILO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Produto" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="INSUMO" Relationship="UsinaModel.FK_INSUMO_SILO" FromRole="SILO" ToRole="INSUMO" />
+  </EntityType>
+  <EntityType Name="TIPOCICLO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="14" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="CICLOUSINA" Relationship="UsinaModel.FK_CicloUsina_TIPOCICLO" FromRole="TIPOCICLO" ToRole="CICLOUSINA" />
+  </EntityType>
+  <EntityType Name="TIPOINSUMO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="INSUMO" Relationship="UsinaModel.FK_INSUMO_TIPOINSUMO" FromRole="TIPOINSUMO" ToRole="INSUMO" />
+  </EntityType>
+  <EntityType Name="TURNO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Inicio" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Fim" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="CICLOUSINA" Relationship="UsinaModel.FK_CicloUsina_TURNO" FromRole="TURNO" ToRole="CICLOUSINA" />
+  </EntityType>
+  <EntityType Name="USUARIO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DataCadastro" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Imagem" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Documento" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="DataNascimento" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Logradouro" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NomeLogradouro" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Bairro" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Numero" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Cidade" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Telefone" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="Celular" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="Funcao" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CICLOUSINA" Relationship="UsinaModel.FK_CicloUsina_USUARIO" FromRole="USUARIO" ToRole="CICLOUSINA" />
+    <NavigationProperty Name="DESTINO" Relationship="UsinaModel.FK_Destino_Cliente" FromRole="USUARIO" ToRole="DESTINO" />
+    <NavigationProperty Name="ENTRADA" Relationship="UsinaModel.FK_ENTRADA_USUARIO" FromRole="USUARIO" ToRole="ENTRADA" />
+    <NavigationProperty Name="RECEITA" Relationship="UsinaModel.FK_RECEITA_USUARIO" FromRole="USUARIO" ToRole="RECEITA" />
+  </EntityType>
+  <Association Name="FK_CicloUsina_Receita1">
+    <End Type="UsinaModel.RECEITA" Role="RECEITA" Multiplicity="1" />
+    <End Type="UsinaModel.CICLOUSINA" Role="CICLOUSINA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RECEITA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CICLOUSINA">
+        <PropertyRef Name="IDReceita" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CicloUsina_TIPOCICLO">
+    <End Type="UsinaModel.TIPOCICLO" Role="TIPOCICLO" Multiplicity="1" />
+    <End Type="UsinaModel.CICLOUSINA" Role="CICLOUSINA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIPOCICLO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CICLOUSINA">
+        <PropertyRef Name="Ciclo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CicloUsina_TURNO">
+    <End Type="UsinaModel.TURNO" Role="TURNO" Multiplicity="1" />
+    <End Type="UsinaModel.CICLOUSINA" Role="CICLOUSINA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TURNO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CICLOUSINA">
+        <PropertyRef Name="IDTurno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CicloUsina_USUARIO">
+    <End Type="UsinaModel.USUARIO" Role="USUARIO" Multiplicity="1" />
+    <End Type="UsinaModel.CICLOUSINA" Role="CICLOUSINA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CICLOUSINA">
+        <PropertyRef Name="IDCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Destino_Caminhao">
+    <End Type="UsinaModel.FROTA" Role="FROTA" Multiplicity="1" />
+    <End Type="UsinaModel.DESTINO" Role="DESTINO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FROTA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DESTINO">
+        <PropertyRef Name="IDCaminhao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Destino_Cliente">
+    <End Type="UsinaModel.USUARIO" Role="USUARIO" Multiplicity="1" />
+    <End Type="UsinaModel.DESTINO" Role="DESTINO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DESTINO">
+        <PropertyRef Name="IDCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Destino_Pesagem">
+    <End Type="UsinaModel.PESAGEM" Role="PESAGEM" Multiplicity="1" />
+    <End Type="UsinaModel.DESTINO" Role="DESTINO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PESAGEM">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DESTINO">
+        <PropertyRef Name="IDPesagem" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ENTRADA_INSUMO">
+    <End Type="UsinaModel.INSUMO" Role="INSUMO" Multiplicity="0..1" />
+    <End Type="UsinaModel.ENTRADA" Role="ENTRADA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="INSUMO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ENTRADA">
+        <PropertyRef Name="IDInsumo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ENTRADA_USUARIO">
+    <End Type="UsinaModel.USUARIO" Role="USUARIO" Multiplicity="0..1" />
+    <End Type="UsinaModel.ENTRADA" Role="ENTRADA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ENTRADA">
+        <PropertyRef Name="IDfornecedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pesagem_Caminhao">
+    <End Type="UsinaModel.FROTA" Role="FROTA" Multiplicity="1" />
+    <End Type="UsinaModel.PESAGEM" Role="PESAGEM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FROTA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PESAGEM">
+        <PropertyRef Name="IDCaminhao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_INSUMO_SILO">
+    <End Type="UsinaModel.SILO" Role="SILO" Multiplicity="1" />
+    <End Type="UsinaModel.INSUMO" Role="INSUMO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SILO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="INSUMO">
+        <PropertyRef Name="IDSilo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_INSUMO_TIPOINSUMO">
+    <End Type="UsinaModel.TIPOINSUMO" Role="TIPOINSUMO" Multiplicity="1" />
+    <End Type="UsinaModel.INSUMO" Role="INSUMO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIPOINSUMO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="INSUMO">
+        <PropertyRef Name="IDTipoInsumo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RECEITA_USUARIO">
+    <End Type="UsinaModel.USUARIO" Role="USUARIO" Multiplicity="1" />
+    <End Type="UsinaModel.RECEITA" Role="RECEITA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RECEITA">
+        <PropertyRef Name="IDCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

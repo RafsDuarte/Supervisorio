@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+    <link rel="stylesheet" href="~/Content/usina.css" />
+
+    <title>MODFLEX 4</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/usina.css" />
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md fixed-top bg-danger">
+            <a style="color: white" class="navbar-brand">MODFLEX 4</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav" id="home">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Sobre Nós", "About", "Home")</li>
+                    <li>@Html.ActionLink("Notícias", "Index", "NOTICIAS")</li>
+                    <li>@Html.ActionLink("Contato", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Usuário", "Create", "Usuario")</li>
+                    <li>@Html.ActionLink("Frota", "Create", "FROTA")</li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

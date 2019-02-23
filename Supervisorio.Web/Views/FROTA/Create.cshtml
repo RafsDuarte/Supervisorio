@@ -1,0 +1,53 @@
+﻿@model Supervisorio.Web.FROTA
+
+@{
+    ViewBag.Title = "Cadastre-se a Frota";
+}
+<body>
+    <section class="texto">
+        @using (Html.BeginForm("Create", "FROTA", FormMethod.Post, new { id = "createfrota-form", enctype = "multipart/form-data" }))
+        {
+
+            @Html.AntiForgeryToken()
+
+            <div class="container" style="margin-top: 20px">
+                <div class="py-5 text-center">
+                    <h2 class="float-left">&laquo; Cadastre-se a Frota &raquo;</h2>
+                </div>
+                <div class="col-md-8" style="margin-left: 150px">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div>
+                        <div>
+                            @Html.LabelFor(model => model.Placa)
+                            @Html.EditorFor(model => model.Placa, new { htmlAttributes = new { @class = "form-control border-danger" } })
+                            @Html.ValidationMessageFor(model => model.Placa, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div>
+                        <div class="mb-3">
+                            @Html.LabelFor(model => model.Marca)
+                            @Html.EditorFor(model => model.Marca, new { htmlAttributes = new { @class = "form-control border-danger" } })
+                            @Html.ValidationMessageFor(model => model.Marca, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        @Html.LabelFor(model => model.Tara)
+                        @Html.EditorFor(model => model.Tara, new { htmlAttributes = new { @class = "form-control border-danger"} })
+                        @Html.ValidationMessageFor(model => model.Tara, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="mb-3">
+                        @Html.LabelFor(model => model.PesoBruto)
+                        @Html.EditorFor(model => model.PesoBruto, new { htmlAttributes = new { @class = "form-control border-danger" } })
+                        @Html.ValidationMessageFor(model => model.PesoBruto, "", new { @class = "text-danger" })
+                    </div>                 
+                    <br />
+                    <button class="btn btn-primary btn-lg bg-danger" onclick="$('#createfrota-form').submit();">Concluir Cadastro</button>
+                </div>
+            </div>
+        }
+    </section>
+    <footer class="container">
+        <p class="float-right"><a href="#">Voltar ao Topo</a></p>
+        <p>&copy; 2018 MODFLEX 4, Inc. &middot; <a href="#">Facebook</a>
+    </footer>
+</body>

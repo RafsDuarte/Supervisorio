@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="UsinaModelStoreContainer" CdmEntityContainer="UsinaEntities">
+    <EntitySetMapping Name="CICLOUSINA">
+      <EntityTypeMapping TypeName="UsinaModel.CICLOUSINA">
+        <MappingFragment StoreEntitySet="CICLOUSINA">
+          <ScalarProperty Name="Adit3Prog" ColumnName="Adit3Prog" />
+          <ScalarProperty Name="Adit3Real" ColumnName="Adit3Real" />
+          <ScalarProperty Name="Adit2Prog" ColumnName="Adit2Prog" />
+          <ScalarProperty Name="Adit2Real" ColumnName="Adit2Real" />
+          <ScalarProperty Name="Adit1Prog" ColumnName="Adit1Prog" />
+          <ScalarProperty Name="Adit1Real" ColumnName="Adit1Real" />
+          <ScalarProperty Name="Agua1Prog" ColumnName="Agua1Prog" />
+          <ScalarProperty Name="Agua1Real" ColumnName="Agua1Real" />
+          <ScalarProperty Name="Cim4Prog" ColumnName="Cim4Prog" />
+          <ScalarProperty Name="Cim4Real" ColumnName="Cim4Real" />
+          <ScalarProperty Name="Cim3Prog" ColumnName="Cim3Prog" />
+          <ScalarProperty Name="Cim3Real" ColumnName="Cim3Real" />
+          <ScalarProperty Name="Cim2Prog" ColumnName="Cim2Prog" />
+          <ScalarProperty Name="Cim2Real" ColumnName="Cim2Real" />
+          <ScalarProperty Name="Cim1Prog" ColumnName="Cim1Prog" />
+          <ScalarProperty Name="Cim1Real" ColumnName="Cim1Real" />
+          <ScalarProperty Name="UR4" ColumnName="UR4" />
+          <ScalarProperty Name="UR3" ColumnName="UR3" />
+          <ScalarProperty Name="UR2" ColumnName="UR2" />
+          <ScalarProperty Name="UR1" ColumnName="UR1" />
+          <ScalarProperty Name="Agr6Prog" ColumnName="Agr6Prog" />
+          <ScalarProperty Name="Agr6Real" ColumnName="Agr6Real" />
+          <ScalarProperty Name="Agr5Prog" ColumnName="Agr5Prog" />
+          <ScalarProperty Name="Agr5Real" ColumnName="Agr5Real" />
+          <ScalarProperty Name="Agr4Prog" ColumnName="Agr4Prog" />
+          <ScalarProperty Name="Agr4Real" ColumnName="Agr4Real" />
+          <ScalarProperty Name="Agr3Prog" ColumnName="Agr3Prog" />
+          <ScalarProperty Name="Agr3Real" ColumnName="Agr3Real" />
+          <ScalarProperty Name="Agr2Prog" ColumnName="Agr2Prog" />
+          <ScalarProperty Name="Agr2Real" ColumnName="Agr2Real" />
+          <ScalarProperty Name="Agr1Prog" ColumnName="Agr1Prog" />
+          <ScalarProperty Name="Agr1Real" ColumnName="Agr1Real" />
+          <ScalarProperty Name="IDCaminhao" ColumnName="IDCaminhao" />
+          <ScalarProperty Name="IDOperacao" ColumnName="IDOperacao" />
+          <ScalarProperty Name="DataProducao" ColumnName="DataProducao" />
+          <ScalarProperty Name="IDTurno" ColumnName="IDTurno" />
+          <ScalarProperty Name="Ciclo" ColumnName="Ciclo" />
+          <ScalarProperty Name="IDReceita" ColumnName="IDReceita" />
+          <ScalarProperty Name="Totalizador" ColumnName="Totalizador" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="IDCliente" ColumnName="IDCliente" />
+          <ScalarProperty Name="IDTipoCiclo" ColumnName="IDTipoCiclo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DESTINO">
+      <EntityTypeMapping TypeName="UsinaModel.DESTINO">
+        <MappingFragment StoreEntitySet="DESTINO">
+          <ScalarProperty Name="IDPesagem" ColumnName="IDPesagem" />
+          <ScalarProperty Name="IDCaminhao" ColumnName="IDCaminhao" />
+          <ScalarProperty Name="IDCliente" ColumnName="IDCliente" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ENTRADA">
+      <EntityTypeMapping TypeName="UsinaModel.ENTRADA">
+        <MappingFragment StoreEntitySet="ENTRADA">
+          <ScalarProperty Name="NF" ColumnName="NF" />
+          <ScalarProperty Name="QtdNF" ColumnName="QtdNF" />
+          <ScalarProperty Name="QtdEntrada" ColumnName="QtdEntrada" />
+          <ScalarProperty Name="DataEntrada" ColumnName="DataEntrada" />
+          <ScalarProperty Name="IDInsumo" ColumnName="IDInsumo" />
+          <ScalarProperty Name="IDfornecedor" ColumnName="IDfornecedor" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ESTOQUE">
+      <EntityTypeMapping TypeName="UsinaModel.ESTOQUE">
+        <MappingFragment StoreEntitySet="ESTOQUE">
+          <ScalarProperty Name="Adit3Est" ColumnName="Adit3Est" />
+          <ScalarProperty Name="Adit2Est" ColumnName="Adit2Est" />
+          <ScalarProperty Name="Adit1Est" ColumnName="Adit1Est" />
+          <ScalarProperty Name="AguaEst" ColumnName="AguaEst" />
+          <ScalarProperty Name="Cim4Est" ColumnName="Cim4Est" />
+          <ScalarProperty Name="Cim3Est" ColumnName="Cim3Est" />
+          <ScalarProperty Name="Cim2Est" ColumnName="Cim2Est" />
+          <ScalarProperty Name="Cim1Est" ColumnName="Cim1Est" />
+          <ScalarProperty Name="UR4Est" ColumnName="UR4Est" />
+          <ScalarProperty Name="UR3Est" ColumnName="UR3Est" />
+          <ScalarProperty Name="UR2Est" ColumnName="UR2Est" />
+          <ScalarProperty Name="UR1Est" ColumnName="UR1Est" />
+          <ScalarProperty Name="Agr6Est" ColumnName="Agr6Est" />
+          <ScalarProperty Name="Agr5Est" ColumnName="Agr5Est" />
+          <ScalarProperty Name="Agr4Est" ColumnName="Agr4Est" />
+          <ScalarProperty Name="Agr3Est" ColumnName="Agr3Est" />
+          <ScalarProperty Name="Agr2Est" ColumnName="Agr2Est" />
+          <ScalarProperty Name="Agr1Est" ColumnName="Agr1Est" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FROTA">
+      <EntityTypeMapping TypeName="UsinaModel.FROTA">
+        <MappingFragment StoreEntitySet="FROTA">
+          <ScalarProperty Name="PesoBruto" ColumnName="PesoBruto" />
+          <ScalarProperty Name="Tara" ColumnName="Tara" />
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+          <ScalarProperty Name="Placa" ColumnName="Placa" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FUNCAO">
+      <EntityTypeMapping TypeName="UsinaModel.FUNCAO">
+        <MappingFragment StoreEntitySet="FUNCAO">
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="INSUMO">
+      <EntityTypeMapping TypeName="UsinaModel.INSUMO">
+        <MappingFragment StoreEntitySet="INSUMO">
+          <ScalarProperty Name="IDSilo" ColumnName="IDSilo" />
+          <ScalarProperty Name="QtdMinima" ColumnName="QtdMinima" />
+          <ScalarProperty Name="QtdEstoque" ColumnName="QtdEstoque" />
+          <ScalarProperty Name="IDTipoInsumo" ColumnName="IDTipoInsumo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PESAGEM">
+      <EntityTypeMapping TypeName="UsinaModel.PESAGEM">
+        <MappingFragment StoreEntitySet="PESAGEM">
+          <ScalarProperty Name="Peso" ColumnName="Peso" />
+          <ScalarProperty Name="IDCaminhao" ColumnName="IDCaminhao" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RECEITA">
+      <EntityTypeMapping TypeName="UsinaModel.RECEITA">
+        <MappingFragment StoreEntitySet="RECEITA">
+          <ScalarProperty Name="Adit3Prog" ColumnName="Adit3Prog" />
+          <ScalarProperty Name="Adit2Prog" ColumnName="Adit2Prog" />
+          <ScalarProperty Name="Adit1Prog" ColumnName="Adit1Prog" />
+          <ScalarProperty Name="Agua1Prog" ColumnName="Agua1Prog" />
+          <ScalarProperty Name="Cim3Prog" ColumnName="Cim3Prog" />
+          <ScalarProperty Name="Cim2Prog" ColumnName="Cim2Prog" />
+          <ScalarProperty Name="Cim1Prog" ColumnName="Cim1Prog" />
+          <ScalarProperty Name="Agr6Prog" ColumnName="Agr6Prog" />
+          <ScalarProperty Name="Agr5Prog" ColumnName="Agr5Prog" />
+          <ScalarProperty Name="Agr4Prog" ColumnName="Agr4Prog" />
+          <ScalarProperty Name="Agr3Prog" ColumnName="Agr3Prog" />
+          <ScalarProperty Name="Agr2Prog" ColumnName="Agr2Prog" />
+          <ScalarProperty Name="Agr1Prog" ColumnName="Agr1Prog" />
+          <ScalarProperty Name="IDOperacao" ColumnName="IDOperacao" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="IDCliente" ColumnName="IDCliente" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SILO">
+      <EntityTypeMapping TypeName="UsinaModel.SILO">
+        <MappingFragment StoreEntitySet="SILO">
+          <ScalarProperty Name="Produto" ColumnName="Produto" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIPOCICLO">
+      <EntityTypeMapping TypeName="UsinaModel.TIPOCICLO">
+        <MappingFragment StoreEntitySet="TIPOCICLO">
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIPOINSUMO">
+      <EntityTypeMapping TypeName="UsinaModel.TIPOINSUMO">
+        <MappingFragment StoreEntitySet="TIPOINSUMO">
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TURNO">
+      <EntityTypeMapping TypeName="UsinaModel.TURNO">
+        <MappingFragment StoreEntitySet="TURNO">
+          <ScalarProperty Name="Fim" ColumnName="Fim" />
+          <ScalarProperty Name="Inicio" ColumnName="Inicio" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USUARIO">
+      <EntityTypeMapping TypeName="UsinaModel.USUARIO">
+        <MappingFragment StoreEntitySet="USUARIO">
+          <ScalarProperty Name="Funcao" ColumnName="Funcao" />
+          <ScalarProperty Name="Celular" ColumnName="Celular" />
+          <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+          <ScalarProperty Name="Cidade" ColumnName="Cidade" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Numero" ColumnName="Numero" />
+          <ScalarProperty Name="Bairro" ColumnName="Bairro" />
+          <ScalarProperty Name="NomeLogradouro" ColumnName="NomeLogradouro" />
+          <ScalarProperty Name="Logradouro" ColumnName="Logradouro" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DataNascimento" ColumnName="DataNascimento" />
+          <ScalarProperty Name="Documento" ColumnName="Documento" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Imagem" ColumnName="Imagem" />
+          <ScalarProperty Name="DataCadastro" ColumnName="DataCadastro" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

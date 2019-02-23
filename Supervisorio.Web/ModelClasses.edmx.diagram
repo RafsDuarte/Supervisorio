@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8838632ac17442efb61e33a57ee7a800" Name="Diagram1">
+        <EntityTypeShape EntityType="UsinaModel.CICLOUSINA" Width="1.5" PointX="8.25" PointY="9.5" />
+        <EntityTypeShape EntityType="UsinaModel.DESTINO" Width="1.5" PointX="3" PointY="9.75" />
+        <EntityTypeShape EntityType="UsinaModel.ENTRADA" Width="1.5" PointX="6" PointY="11.625" />
+        <EntityTypeShape EntityType="UsinaModel.ESTOQUE" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="UsinaModel.FROTA" Width="1.5" PointX="0.75" PointY="16.125" />
+        <EntityTypeShape EntityType="UsinaModel.FUNCAO" Width="1.5" PointX="3.75" PointY="6.75" />
+        <EntityTypeShape EntityType="UsinaModel.INSUMO" Width="1.5" PointX="3.75" PointY="2.75" />
+        <EntityTypeShape EntityType="UsinaModel.PESAGEM" Width="1.5" PointX="0.75" PointY="7.375" />
+        <EntityTypeShape EntityType="UsinaModel.RECEITA" Width="1.5" PointX="3" PointY="13.75" />
+        <EntityTypeShape EntityType="UsinaModel.SILO" Width="1.5" PointX="1.5" PointY="1.875" />
+        <EntityTypeShape EntityType="UsinaModel.TIPOCICLO" Width="1.5" PointX="6" PointY="15.375" />
+        <EntityTypeShape EntityType="UsinaModel.TIPOINSUMO" Width="1.5" PointX="1.5" PointY="4.5" />
+        <EntityTypeShape EntityType="UsinaModel.TURNO" Width="1.5" PointX="6" PointY="17.75" />
+        <EntityTypeShape EntityType="UsinaModel.USUARIO" Width="1.5" PointX="0.75" PointY="10.5" />
+        <AssociationConnector Association="UsinaModel.FK_CicloUsina_Receita1" />
+        <AssociationConnector Association="UsinaModel.FK_CicloUsina_TIPOCICLO" />
+        <AssociationConnector Association="UsinaModel.FK_CicloUsina_TURNO" />
+        <AssociationConnector Association="UsinaModel.FK_CicloUsina_USUARIO" />
+        <AssociationConnector Association="UsinaModel.FK_Destino_Caminhao" />
+        <AssociationConnector Association="UsinaModel.FK_Destino_Cliente" />
+        <AssociationConnector Association="UsinaModel.FK_Destino_Pesagem" />
+        <AssociationConnector Association="UsinaModel.FK_ENTRADA_INSUMO" />
+        <AssociationConnector Association="UsinaModel.FK_ENTRADA_USUARIO" />
+        <AssociationConnector Association="UsinaModel.FK_Pesagem_Caminhao" />
+        <AssociationConnector Association="UsinaModel.FK_INSUMO_SILO" />
+        <AssociationConnector Association="UsinaModel.FK_INSUMO_TIPOINSUMO" />
+        <AssociationConnector Association="UsinaModel.FK_RECEITA_USUARIO" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

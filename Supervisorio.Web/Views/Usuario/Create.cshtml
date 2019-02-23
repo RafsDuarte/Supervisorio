@@ -1,0 +1,116 @@
+﻿@model Supervisorio.Web.USUARIO
+
+@{
+    ViewBag.Title = "Cadastre-se";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <section class="texto">
+        @using (Html.BeginForm("Create", "USUARIO", FormMethod.Post, new { id = "create-form", enctype = "multipart/form-data" }))
+        {
+
+            @Html.AntiForgeryToken()
+
+            <div class="container" style="margin-top: 20px">
+                <div class="py-5 text-center">
+                    <h2 class="float-left">&laquo; Cadastre-se &raquo;</h2>
+                </div>
+                <div class="col-md-8" style="margin-left: 150px">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div>
+                        <div>
+                            @Html.LabelFor(model => model.DataCadastro)
+                            @Html.EditorFor(model => model.DataCadastro, new { htmlAttributes = new { @class = "form-control border-danger", @type = "date" } })
+                            @Html.ValidationMessageFor(model => model.DataCadastro, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div>
+                        <div class="mb-3">
+                            @Html.LabelFor(model => model.Nome)
+                            @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control border-danger" } })
+                            @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        @Html.LabelFor(model => model.DataNascimento)
+                        @Html.EditorFor(model => model.DataNascimento, new { htmlAttributes = new { @class = "form-control border-danger", @type = "date" } })
+                        @Html.ValidationMessageFor(model => model.DataNascimento, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="mb-3">
+                        @Html.LabelFor(model => model.Documento)
+                        @Html.EditorFor(model => model.Documento, new { htmlAttributes = new { @class = "form-control border-danger" } })
+                        @Html.ValidationMessageFor(model => model.Documento, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="mb-3">
+                        @Html.LabelFor(model => model.Funcao)
+                        @Html.EditorFor(model => model.Funcao, new { htmlAttributes = new { @class = "form-control border-danger" } })
+                        @Html.ValidationMessageFor(model => model.Funcao, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="mb-3">
+                        @Html.LabelFor(model => model.Email)
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control border-danger", @placeholder = "fulano@exemplo.com", @required = "true", @type = "email" } })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5 mb-3">
+                            @Html.LabelFor(model => model.Cidade)
+                            @Html.EditorFor(model => model.Cidade, new { htmlAttributes = new { @class = "form-control border-danger" } })
+                            @Html.ValidationMessageFor(model => model.Cidade, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            @Html.LabelFor(model => model.Estado)
+                            @Html.EditorFor(model => model.Estado, new { htmlAttributes = new { @class = "form-control border-danger" } })
+                            @Html.ValidationMessageFor(model => model.Estado, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-7 mb-3">
+                            @Html.LabelFor(model => model.NomeLogradouro)
+                            @Html.EditorFor(model => model.NomeLogradouro, new { htmlAttributes = new { @class = "form-control border-danger" } })
+                            @Html.ValidationMessageFor(model => model.NomeLogradouro, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-5 mb-3">
+                            @Html.LabelFor(model => model.Logradouro)
+                            @Html.EditorFor(model => model.Logradouro, new { htmlAttributes = new { @class = "form-control border-danger" } })
+                            @Html.ValidationMessageFor(model => model.Logradouro, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-2 mb-3">
+                            @Html.LabelFor(model => model.Numero)
+                            @Html.EditorFor(model => model.Numero, new { htmlAttributes = new { @class = "form-control border-danger" } })
+                            @Html.ValidationMessageFor(model => model.Numero, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="col-md-10 mb-3">
+                            @Html.LabelFor(model => model.Bairro)
+                            @Html.EditorFor(model => model.Bairro, new { htmlAttributes = new { @class = "form-control border-danger" } })
+                            @Html.ValidationMessageFor(model => model.Bairro, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="col-md-5 mb-3">
+                            @Html.LabelFor(model => model.Telefone)
+                            @Html.EditorFor(model => model.Telefone, new { htmlAttributes = new { @class = "form-control border-danger" } })
+                            @Html.ValidationMessageFor(model => model.Telefone, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-5 mb-3">
+                            @Html.LabelFor(model => model.Celular)
+                            @Html.EditorFor(model => model.Celular, new { htmlAttributes = new { @class = "form-control border-danger" } })
+                            @Html.ValidationMessageFor(model => model.Celular, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <br />
+                    <button class="btn btn-primary btn-lg bg-danger" onclick="$('#create-form').submit();">Concluir Cadastro</button>
+                </div>
+            </div>
+        }
+    </section>
+    <footer class="container">
+        <p class="float-right"><a href="#">Voltar ao Topo</a></p>
+        <p>&copy; 2018 MODFLEX 4, Inc. &middot; <a href="#">Facebook</a>
+    </footer>
+</body>
+</html>
